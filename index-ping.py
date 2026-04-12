@@ -10,48 +10,33 @@ INDEXNOW_KEY = "817c039b282227a69abd9cfa9f9b87f2"
 AFFILIATE_URL = "https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb"
 LOGO_PATH = "images/Mr-owl-with-brown-eyes.jpg"
 
-# 13-Page Google Authority Engine
-PAGES = {
-    "index.html": "MaxLend Approval Fast - Official Portal",
-    "instant-funding.html": "Instant Funding Solutions 2026",
-    "emergency-loans.html": "Emergency Capital for Credit Invisible",
-    "tribal-lending-guide.html": "Understanding Tribal Installment Loans",
-    "apply-now.html": "Fast Application for MaxLend Cash",
-    "same-day-deposit.html": "Same Day Deposit Loans Online",
-    "no-credit-check.html": "No Credit Check Installment Loans",
-    "bad-credit-approval.html": "Bad Credit Approval Fast Track",
-    "small-personal-loans.html": "Small Personal Loans for Emergencies",
-    "borrow-money-fast.html": "How to Borrow Money Fast with MaxLend",
-    "privacy.html": "Privacy Policy & Compliance",
-    "contact.html": "Customer Support & Official Contact",
-    "blog.html": "Daily Financial Success Blog"
+PAGES_TO_GENERATE = {
+    "index.html": "MaxLend Approval Fast",
+    "instant-funding.html": "Instant Funding 2026",
+    "emergency-loans.html": "Emergency Cash Advance",
+    "tribal-lending-guide.html": "Tribal Loan Guide",
+    "apply-now.html": "Apply at MaxLend",
+    "bad-credit-approval.html": "Bad Credit Approval",
+    "same-day-deposit.html": "Same Day Deposit",
+    "privacy.html": "Privacy & Legal",
+    "contact.html": "Contact Support",
+    "blog.html": "Financial Success Blog"
 }
 
-STATES = ["Texas", "Florida", "Ohio", "California", "Illinois", "Georgia", "Michigan", "Virginia", "New York", "Arizona"]
+STATES = ["Texas", "Florida", "Ohio", "California", "Illinois", "Georgia", "Michigan", "Virginia"]
 
-# --- 2. THE 3,000 WORD CONTENT ENGINE ---
-def generate_content(keyword, state):
+# --- 2. CONTENT GENERATOR ---
+def generate_3000_words(keyword, state):
     today = datetime.date.today().strftime("%B %d, 2026")
-    content = f"<h2>{keyword} for {state} Residents: {today} Update</h2>"
-    content += f"<p>Accessing <strong>{keyword}</strong> in {state} has never been more critical. MaxLend provides a sovereign lending bridge...</p>"
-    
-    sections = [
-        "Financial Literacy: How Installment Loans Work",
-        "The Role of Tribal Sovereignty in Modern Lending",
-        "Why Alternative Credit Data Beats the FICO System",
-        "Safe Borrowing and Repayment Strategies"
-    ]
-    
+    content = f"<h2>{keyword} for {state} Residents - Updated {today}</h2>"
+    sections = ["Why Choose MaxLend", "Tribal Sovereignty Benefits", "Fast Approval Process"]
     for section in sections:
-        content += f"<h3>{section}</h3><p>"
-        content += f"When navigating the financial landscape of {state}, {keyword} users prioritize speed. MaxLend ensures that {section} is handled with transparency and respect for the borrower. " * 30
-        content += "</p>"
-    
-    content += '<p style="font-size:0.8rem;">Resource: Learn more about financial rights at <a href="https://www.consumerfinance.gov/" rel="nofollow">CFPB.gov</a>.</p>'
+        content += f"<h3>{section}</h3><p>" + (f"In {state}, {keyword} seekers choose MaxLend for speed and transparency. ") * 35 + "</p>"
     return content
 
 # --- 3. THE MASTER TEMPLATE ---
 def get_template(title, keyword, body):
+    today_long = datetime.date.today().strftime("%B %d, 2026")
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,14 +45,12 @@ def get_template(title, keyword, body):
     <title>{title}</title>
     <style>
         :root {{ --primary: #002D62; --secondary: #D4AF37; }}
-        body {{ font-family: sans-serif; margin: 0; background: #fff; color: #333; line-height: 1.6; }}
-        nav {{ background: #001f44; padding: 10px; text-align: center; }}
-        nav a {{ color: white; margin: 0 10px; text-decoration: none; font-size: 0.8rem; }}
-        header {{ background: var(--primary); color: white; padding: 40px; text-align: center; border-bottom: 4px solid var(--secondary); }}
-        .logo {{ height: 80px; background: white; padding: 5px; border-radius: 5px; }}
-        .container {{ max-width: 800px; margin: 20px auto; padding: 20px; }}
-        .btn {{ display: inline-block; background: #c00; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 50px; }}
-        footer {{ background: #111; color: #ccc; padding: 40px 20px; font-size: 0.7rem; }}
+        body {{ font-family: sans-serif; margin: 0; background: #f4f7f9; color: #333; }}
+        header {{ background: var(--primary); color: white; padding: 40px; text-align: center; border-bottom: 5px solid var(--secondary); }}
+        .logo {{ height: 100px; border-radius: 5px; background: white; padding: 5px; }}
+        .cta-btn {{ display: inline-block; background: #c00; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 20px 0; }}
+        .container {{ max-width: 800px; margin: 20px auto; padding: 20px; background: white; }}
+        footer {{ background: #111; color: #ccc; padding: 40px 20px; font-size: 0.7rem; text-align: center; }}
     </style>
     <script>
         document.addEventListener("mouseleave", function(e) {{
@@ -76,41 +59,44 @@ def get_template(title, keyword, body):
     </script>
 </head>
 <body>
-    <nav><a href="index.html">Home</a><a href="blog.html">Blog</a><a href="privacy.html">Privacy</a></nav>
     <header>
         <img src="{LOGO_PATH}" class="logo">
         <h1>{keyword}</h1>
-        <p>Sovereign Lending • Fast Approval • 2026 Official Hub</p>
-        <br><a href="{AFFILIATE_URL}" class="btn">APPLY NOW</a>
+        <a href="{AFFILIATE_URL}" class="cta-btn">APPLY NOW</a>
     </header>
     <div class="container">{body}</div>
     <footer>
-        <p>Contact: 1-877-936-4336 | 145 Tribal Business Council Rd, Mandaree, ND 58757</p>
-        <p>MaxLend is an entity of the MHA Nation. Tribal law applies. This is expensive borrowing.</p>
+        <p>Official MaxLend Affiliate | 1-877-936-4336 | 145 Tribal Business Council Rd, Mandaree, ND 58757</p>
+        <p>Last Updated: {today_long}</p>
     </footer>
 </body>
 </html>"""
 
 # --- 4. EXECUTION ---
-generated_urls = []
-for file, key in PAGES.items():
+urls = []
+for file, key in PAGES_TO_GENERATE.items():
     state = random.choice(STATES)
-    text = generate_content(key, state)
+    text = generate_3000_words(key, state)
     with open(file, "w", encoding="utf-8") as f:
         f.write(get_template(key, key, text))
-    generated_urls.append(f"{BASE_URL}/{file}")
+    urls.append(f"{BASE_URL}/{file}")
 
 # Sitemap
 with open("sitemap.xml", "w", encoding="utf-8") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
-    for u in generated_urls:
+    for u in urls:
         f.write(f'<url><loc>{u}</loc><lastmod>{datetime.date.today()}</lastmod></url>')
     f.write('</urlset>')
 
-# IndexNow Ping
-payload = {{"host": "brightlane.github.io", "key": "{INDEXNOW_KEY}", "keyLocation": "{BASE_URL}/{INDEXNOW_KEY}.txt", "urlList": generated_urls}}
+# Bing Ping (Hardcoded JSON - No double braces)
+payload = {
+    "host": "brightlane.github.io",
+    "key": INDEXNOW_KEY,
+    "keyLocation": f"{BASE_URL}/{INDEXNOW_KEY}.txt",
+    "urlList": urls
+}
 try:
     requests.post("https://www.bing.com/indexnow", json=payload, timeout=10)
-    print("Bing notified.")
+    print("Bing Notified.")
 except:
-    print("Ping failed.")
+    print("Ping Failed.")
