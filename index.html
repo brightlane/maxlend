@@ -1,35 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="eWVDN3vbam9nnaZQu7wAQKyfmJJdM7zjI80l4DGeUrQ" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaxLend Approval Fast</title>
+    <title>MaxLend Approval Fast | Official 2026 Portal</title>
     <style>
-        :root { --primary: #002D62; --secondary: #D4AF37; }
-        body { font-family: sans-serif; margin: 0; background: #f4f7f9; color: #333; }
-        header { background: var(--primary); color: white; padding: 40px; text-align: center; border-bottom: 5px solid var(--secondary); }
-        .logo { height: 100px; border-radius: 5px; background: white; padding: 5px; }
-        .cta-btn { display: inline-block; background: #c00; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 20px 0; }
-        .container { max-width: 800px; margin: 20px auto; padding: 20px; background: white; }
-        footer { background: #111; color: #ccc; padding: 40px 20px; font-size: 0.7rem; text-align: center; }
+        :root {
+            --primary: #002D62;
+            --secondary: #D4AF37;
+            --accent: #c00;
+            --bg: #f4f7f9;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7; /* Increased for better readability */
+        }
+
+        /* Modern Gradient Header */
+        header {
+            background: linear-gradient(135deg, #001f44 0%, #00458b 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+
+        .logo {
+            height: 90px;
+            background: white;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 20px 0 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Trust Bar with Emojis */
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .trust-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        /* The Main Content Card */
+        .main-container {
+            max-width: 900px;
+            margin: -40px auto 40px; /* Overlap header for depth */
+            padding: 0 20px;
+        }
+
+        .content-card {
+            background: white;
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+            border: 1px solid #eef1f4;
+        }
+
+        /* Readability & Headlines */
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            border-left: 6px solid var(--secondary);
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 1.15rem; /* Large enough for mobile without squinting */
+            margin-bottom: 25px;
+            color: #4a4a4a;
+        }
+
+        /* High-Impact CTA Button */
+        .cta-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn-large {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 22px 55px;
+            font-size: 1.4rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 25px rgba(204,0,0,0.3);
+        }
+
+        .btn-large:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(204,0,0,0.4);
+            background: #e60000;
+        }
+
+        /* Mobile Sticky Footer Button */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            border-top: 2px solid var(--secondary);
+        }
+
+        footer {
+            background: #0b1218;
+            color: #94a3b8;
+            padding: 60px 20px 120px; /* Bottom padding for sticky button */
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .legal-footer {
+            max-width: 700px;
+            margin: auto;
+            border-top: 1px solid #334155;
+            padding-top: 25px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .content-card { padding: 25px; }
+        }
     </style>
-    <script>
-        document.addEventListener("mouseleave", function(e) {
-            if (e.clientY < 0) { window.open("https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb", "_blank"); }
-        });
-    </script>
 </head>
 <body>
-    <header>
-        <img src="images/Mr-owl-with-brown-eyes.jpg" class="logo">
-        <h1>MaxLend Approval Fast</h1>
-        <a href="https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb" class="cta-btn">APPLY NOW</a>
-    </header>
-    <div class="container"><h2>MaxLend Approval Fast for Ohio Residents - Updated April 12, 2026</h2><h3>Why Choose MaxLend</h3><p>In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. </p><h3>Tribal Sovereignty Benefits</h3><p>In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. </p><h3>Fast Approval Process</h3><p>In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. In Ohio, MaxLend Approval Fast seekers choose MaxLend for speed and transparency. </p></div>
-    <footer>
-        <p>Official MaxLend Affiliate | 1-877-936-4336 | 145 Tribal Business Council Rd, Mandaree, ND 58757</p>
-        <p>Last Updated: April 12, 2026</p>
-    </footer>
+
+<header>
+    <img src="images/Mr-owl-with-brown-eyes.jpg" class="logo" alt="MaxLend Seal">
+    <h1>MaxLend Approval Fast</h1>
+    <p>Flexible Tribal Installment Loans for Modern Borrowers</p>
+    
+    <div class="trust-bar">
+        <span class="trust-tag">🛡️ 256-Bit SSL Secure</span>
+        <span class="trust-tag">⚡ Next Day Funding</span>
+        <span class="trust-tag">🦅 Sovereign Entity</span>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="content-card">
+        <div class="cta-container">
+            <h2>Check Your Rate Today</h2>
+            <p>Checking your eligibility does not impact your FICO® credit score. Decisions in as little as 60 seconds.</p>
+            <a href="https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb" class="btn-large">GET STARTED NOW</a>
+        </div>
+
+        <h2>Why Choose MaxLend?</h2>
+        <p>Traditional banking systems often overlook hardworking individuals based purely on a credit score. MaxLend utilizes alternative credit data to provide access to capital when you need it most. As a sovereign enterprise of the Mandan, Hidatsa, and Arikara Nation, we offer a specialized lending experience built on speed and transparency.</p>
+
+        <h2>Funding When You Need It</h2>
+        <p>Whether it is an unexpected car repair or an emergency medical bill, our installment loans provide the cushion you need without the "single-payment" stress of a traditional payday loan. You can pay back your loan in manageable increments over time.</p>
+    </div>
+</div>
+
+<div class="sticky-footer">
+    <a href="https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb" class="btn-large" style="font-size: 1.1rem; padding: 12px 35px; margin: 0;">APPLY FOR FUNDING</a>
+</div>
+
+<footer>
+    <div class="legal-footer">
+        <p><strong>Notice:</strong> MaxLend is an entity of the Mandan, Hidatsa, and Arikara Nation, a federally recognized sovereign American Indian Tribe. All loans are subject to Tribal Law.</p>
+        <p>145 Tribal Business Council Rd, Mandaree, ND 58757 | 1-877-936-4336</p>
+        <p>This is an expensive form of borrowing. Loans are intended for short-term financial needs and should not be used as a long-term solution.</p>
+        <p style="margin-top:20px;">&copy; 2026 MaxLend Approval Fast. All Rights Reserved.</p>
+    </div>
+</footer>
+
 </body>
 </html>
