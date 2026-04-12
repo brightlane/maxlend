@@ -1,98 +1,98 @@
 def get_template(title, keyword, body):
-    today_long = datetime.date.today().strftime("%B %d, 2026")
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} | MaxLend Official Portal</title>
+    <title>{title}</title>
     <style>
-        :root {{ --primary: #002D62; --secondary: #D4AF37; --accent: #c00; --bg: #f4f7f9; }}
-        body {{ font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }}
+        :root {{ --primary: #002D62; --secondary: #D4AF37; --accent: #c00; --text: #333; }}
+        body {{ font-family: 'Arial', sans-serif; margin: 0; background: #f0f2f5; color: var(--text); }}
         
-        /* Glassmorphism Header */
-        header {{ background: linear-gradient(135deg, #001f44 0%, #00458b 100%); color: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--secondary); }}
-        .logo {{ height: 90px; background: white; padding: 8px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }}
-        
-        /* High-Conversion Hero */
-        .hero-h1 {{ font-size: 2.5rem; margin: 20px 0 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }}
-        .hero-sub {{ font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; }}
-        
-        /* The Trust Bar */
-        .trust-bar {{ display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }}
-        .trust-tag {{ background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.2); }}
+        /* Ultra-Clean Header */
+        header {{ background: white; padding: 20px; text-align: center; border-bottom: 3px solid var(--secondary); }}
+        .logo {{ height: 60px; }}
 
-        /* Content Cards */
-        .container {{ max-width: 900px; margin: -40px auto 40px; padding: 0 20px; }}
-        .card {{ background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eef1f4; }}
+        /* Visual Progress Tracker */
+        .stepper {{ display: flex; justify-content: space-around; max-width: 600px; margin: 20px auto; padding: 0 10px; }}
+        .step {{ text-align: center; flex: 1; font-size: 0.75rem; font-weight: bold; color: #999; }}
+        .step.active {{ color: var(--primary); }}
+        .step-circle {{ width: 30px; height: 30px; border-radius: 50%; background: #ddd; margin: 0 auto 5px; line-height: 30px; color: white; }}
+        .step.active .step-circle {{ background: var(--secondary); }}
+
+        /* Hero Card */
+        .hero-card {{ background: linear-gradient(rgba(0,45,98,0.9), rgba(0,45,98,0.9)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1000'); background-size: cover; color: white; padding: 60px 20px; text-align: center; }}
+        .hero-card h1 {{ font-size: 2.2rem; margin: 0; text-transform: uppercase; letter-spacing: 1px; }}
         
-        /* Readability Improvements */
-        h2 {{ color: var(--primary); font-size: 1.8rem; border-left: 6px solid var(--secondary); padding-left: 15px; margin-top: 40px; }}
-        p {{ font-size: 1.1rem; color: #444; margin-bottom: 25px; }}
+        /* Icon Grid */
+        .icon-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 900px; margin: -30px auto 30px; padding: 0 20px; }}
+        .icon-item {{ background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-bottom: 4px solid var(--secondary); }}
+        .icon-item div {{ font-size: 2rem; margin-bottom: 10px; }}
+        .icon-item span {{ display: block; font-size: 0.9rem; font-weight: bold; color: var(--primary); }}
+
+        /* High-Visibility Button */
+        .cta-wrap {{ text-align: center; margin: 40px 0; }}
+        .main-btn {{ display: inline-block; background: var(--accent); color: white; padding: 25px 60px; font-size: 1.5rem; text-decoration: none; border-radius: 12px; font-weight: 800; box-shadow: 0 10px 0 #900; transition: all 0.1s; }}
+        .main-btn:active {{ transform: translateY(4px); box-shadow: 0 6px 0 #900; }}
+
+        /* Clean Content Area */
+        .content-area {{ max-width: 800px; margin: auto; padding: 20px; background: white; border-radius: 15px; margin-bottom: 100px; font-size: 1.1rem; line-height: 1.8; }}
         
-        /* The Big Red Button */
-        .cta-btn {{ display: inline-block; background: var(--accent); color: white; padding: 22px 50px; font-size: 1.4rem; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; box-shadow: 0 8px 20px rgba(204,0,0,0.3); border: none; cursor: pointer; }}
-        .cta-btn:hover {{ transform: scale(1.05); background: #e60000; box-shadow: 0 12px 25px rgba(204,0,0,0.4); }}
-        
-        /* FAQ Styling */
-        .faq-item {{ background: #f8fbff; border: 1px solid #d0e3ff; border-radius: 10px; padding: 20px; margin-bottom: 15px; }}
-        .faq-item strong {{ color: var(--primary); display: block; margin-bottom: 10px; font-size: 1.1rem; }}
-        
-        /* Floating Mobile Footer */
-        .sticky-bar {{ position: fixed; bottom: 0; width: 100%; background: white; padding: 15px; text-align: center; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 1000; border-top: 2px solid var(--secondary); }}
-        
-        footer {{ background: #0b1218; color: #999; padding: 60px 20px; text-align: center; font-size: 0.85rem; }}
-        .legal-box {{ max-width: 700px; margin: auto; border-top: 1px solid #333; padding-top: 20px; }}
+        /* Sticky Bar for Mobile */
+        .sticky-bar {{ position: fixed; bottom: 0; width: 100%; background: white; padding: 15px; box-shadow: 0 -5px 15px rgba(0,0,0,0.1); text-align: center; z-index: 100; border-top: 2px solid var(--secondary); }}
+
+        footer {{ background: #111; color: #777; padding: 40px 20px; text-align: center; font-size: 0.8rem; }}
     </style>
-    <script>
-        // Exit Intent Pop-under
-        document.addEventListener("mouseleave", function(e) {{
-            if (e.clientY < 0) {{ window.open("{AFFILIATE_URL}", "_blank"); }}
-        }});
-    </script>
 </head>
 <body>
 
-    <header>
-        <img src="{LOGO_PATH}" class="logo" alt="MaxLend Seal">
-        <h1 class="hero-h1">{keyword}</h1>
-        <p class="hero-sub">Sovereign Installment Loans for Modern Borrowers</p>
-        <div class="trust-bar">
-            <span class="trust-tag">🛡️ 256-Bit Encrypted</span>
-            <span class="trust-tag">⚡ Same Day Funding</span>
-            <span class="trust-tag">🦅 MHA Nation Entity</span>
-        </div>
-    </header>
+<header>
+    <img src="{LOGO_PATH}" class="logo" alt="MaxLend">
+</header>
 
-    <div class="container">
-        <div class="card">
-            <div style="text-align:center; margin-bottom:40px;">
-                <h2 style="border:none; padding:0; margin-bottom:10px;">Check Your Eligibility in 60 Seconds</h2>
-                <p>No hard credit pull. Checking your rate will not impact your FICO® score.</p>
-                <a href="{AFFILIATE_URL}" class="cta-btn">GET MY CASH DECISION</a>
-            </div>
+<div class="stepper">
+    <div class="step active"><div class="step-circle">1</div>Application</div>
+    <div class="step active"><div class="step-circle">2</div>Approval</div>
+    <div class="step"><div class="step-circle">3</div>Funding</div>
+</div>
 
-            {body}
-            
-            <div style="background: #fff8e1; padding: 25px; border-radius: 10px; border: 1px dashed var(--secondary); margin-top: 40px;">
-                <h3 style="margin-top:0;">Final April 2026 Notice</h3>
-                <p style="margin-bottom:0; font-size: 1rem;">Applications are currently being prioritized for residents in high-demand states. Apply before 5:00 PM EST for the fastest processing times.</p>
-            </div>
-        </div>
-    </div>
+<div class="hero-card">
+    <h1>{keyword}</h1>
+    <p>Get up to $2,000 sent directly to your bank account.</p>
+</div>
 
-    <div class="sticky-bar">
-        <a href="{AFFILIATE_URL}" class="cta-btn" style="font-size: 1.1rem; padding: 12px 40px;">APPLY NOW</a>
-    </div>
+<div class="icon-grid">
+    <div class="icon-item"><div>⚡</div><span>Fast Approval</span></div>
+    <div class="icon-item"><div>🛡️</div><span>Secure Data</span></div>
+    <div class="icon-item"><div>💸</div><span>Next Day Cash</span></div>
+    <div class="icon-item"><div>📉</div><span>No FICO Impact</span></div>
+</div>
 
-    <footer>
-        <div class="legal-box">
-            <p><strong>Official Entity:</strong> MaxLend is a sovereign enterprise of the Mandan, Hidatsa, and Arikara Nation.</p>
-            <p>145 Tribal Business Council Rd, Mandaree, ND 58757 | 1-877-936-4336</p>
-            <p>Loans from MaxLend are expensive and intended for short-term financial needs only. Please borrow responsibly.</p>
-            <p style="margin-top:20px;">&copy; 2026 MaxLend Approval Fast | Updated: {today_long}</p>
-        </div>
-    </footer>
+<div class="cta-wrap">
+    <a href="{AFFILIATE_URL}" class="main-btn">CHECK YOUR RATE &raquo;</a>
+    <p style="font-size: 0.8rem; color: #666; margin-top: 15px;">Secure 256-bit encrypted application process.</p>
+</div>
+
+<div class="content-area">
+    {body}
+</div>
+
+<div class="sticky-bar">
+    <a href="{AFFILIATE_URL}" class="main-btn" style="padding: 15px 40px; font-size: 1.2rem; box-shadow: 0 5px 0 #900;">APPLY NOW</a>
+</div>
+
+<footer>
+    <p>MaxLend is a sovereign enterprise of the Mandan, Hidatsa, and Arikara Nation.</p>
+    <p>145 Tribal Business Council Rd, Mandaree, ND 58757 | 1-877-936-4336</p>
+    <p>&copy; 2026 MaxLend Official Affiliate Portal</p>
+</footer>
+
+<script>
+    // Exit Intent
+    document.addEventListener("mouseleave", function(e) {{
+        if (e.clientY < 0) {{ window.open("{AFFILIATE_URL}", "_blank"); }}
+    }});
+</script>
 
 </body>
 </html>"""
