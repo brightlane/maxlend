@@ -9,190 +9,261 @@
             --primary: #002D62;
             --secondary: #D4AF37;
             --accent: #c00;
-            --bg: #f4f7f9;
-            --text: #333;
+            --success: #28a745;
+            --bg: #f8fafc;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7; /* Increased for better readability */
+            color: #333;
         }
 
-        /* Modern Gradient Header */
-        header {
-            background: linear-gradient(135deg, #001f44 0%, #00458b 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--secondary);
+        /* Clean Navigation */
+        nav {
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #eee;
         }
 
         .logo {
-            height: 90px;
-            background: white;
-            padding: 8px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            height: 50px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin: 20px 0 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        /* High-Impact Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 45, 98, 0.85), rgba(0, 45, 98, 0.85)), 
+                        url('https://images.unsplash.com/photo-1454165833767-027ff33027ef?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
         }
 
-        /* Trust Bar with Emojis */
-        .trust-bar {
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0 0 15px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Progress Steps Graphic */
+        .steps-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+            max-width: 800px;
+            margin: -40px auto 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .trust-tag {
-            background: rgba(255,255,255,0.1);
-            padding: 6px 18px;
-            border-radius: 25px;
+        .step-box {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+        }
+
+        .step-label {
             font-size: 0.85rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(5px);
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
         }
 
-        /* The Main Content Card */
-        .main-container {
-            max-width: 900px;
-            margin: -40px auto 40px; /* Overlap header for depth */
+        /* Feature Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
-        .content-card {
+        .feature-card {
             background: white;
-            padding: 45px;
-            border-radius: 15px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
-            border: 1px solid #eef1f4;
-        }
-
-        /* Readability & Headlines */
-        h2 {
-            color: var(--primary);
-            font-size: 1.8rem;
-            border-left: 6px solid var(--secondary);
-            padding-left: 15px;
-            margin-top: 40px;
-        }
-
-        p {
-            font-size: 1.15rem; /* Large enough for mobile without squinting */
-            margin-bottom: 25px;
-            color: #4a4a4a;
-        }
-
-        /* High-Impact CTA Button */
-        .cta-container {
+            padding: 30px;
+            border-radius: 12px;
             text-align: center;
-            margin: 40px 0;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s;
         }
 
-        .btn-large {
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Conversion Button */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .apply-button {
             display: inline-block;
             background: var(--accent);
             color: white;
-            padding: 22px 55px;
-            font-size: 1.4rem;
+            padding: 25px 80px;
+            font-size: 1.6rem;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 8px 25px rgba(204,0,0,0.3);
+            border-radius: 12px;
+            font-weight: 900;
+            box-shadow: 0 10px 0 #900;
+            transition: all 0.1s;
         }
 
-        .btn-large:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 30px rgba(204,0,0,0.4);
+        .apply-button:hover {
             background: #e60000;
         }
 
-        /* Mobile Sticky Footer Button */
-        .sticky-footer {
+        .apply-button:active {
+            transform: translateY(4px);
+            box-shadow: 0 6px 0 #900;
+        }
+
+        /* Readable Content Section */
+        .seo-content {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .seo-content h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Mobile Sticky Footer */
+        .sticky-action {
             position: fixed;
             bottom: 0;
-            left: 0;
             width: 100%;
             background: white;
             padding: 15px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
             text-align: center;
-            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
             z-index: 1000;
-            border-top: 2px solid var(--secondary);
         }
 
         footer {
-            background: #0b1218;
-            color: #94a3b8;
-            padding: 60px 20px 120px; /* Bottom padding for sticky button */
+            background: #111;
+            color: #666;
+            padding: 60px 20px 120px;
             text-align: center;
-            font-size: 0.85rem;
-        }
-
-        .legal-footer {
-            max-width: 700px;
-            margin: auto;
-            border-top: 1px solid #334155;
-            padding-top: 25px;
+            font-size: 0.8rem;
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .content-card { padding: 25px; }
+            .hero h1 { font-size: 1.8rem; }
+            .apply-button { width: 80%; padding: 20px 0; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="images/Mr-owl-with-brown-eyes.jpg" class="logo" alt="MaxLend Seal">
-    <h1>MaxLend Approval Fast</h1>
-    <p>Flexible Tribal Installment Loans for Modern Borrowers</p>
-    
-    <div class="trust-bar">
-        <span class="trust-tag">🛡️ 256-Bit SSL Secure</span>
-        <span class="trust-tag">⚡ Next Day Funding</span>
-        <span class="trust-tag">🦅 Sovereign Entity</span>
-    </div>
+<nav>
+    <img src="images/Mr-owl-with-brown-eyes.jpg" class="logo" alt="MaxLend Logo">
+</nav>
+
+<header class="hero">
+    <h1>Quick Approval Loans Up to $2,000</h1>
+    <p>No hard credit check. Secure tribal funding sent directly to your account.</p>
+    <a href="https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb" class="apply-button">APPLY NOW &raquo;</a>
 </header>
 
-<div class="main-container">
-    <div class="content-card">
-        <div class="cta-container">
-            <h2>Check Your Rate Today</h2>
-            <p>Checking your eligibility does not impact your FICO® credit score. Decisions in as little as 60 seconds.</p>
-            <a href="https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb" class="btn-large">GET STARTED NOW</a>
-        </div>
-
-        <h2>Why Choose MaxLend?</h2>
-        <p>Traditional banking systems often overlook hardworking individuals based purely on a credit score. MaxLend utilizes alternative credit data to provide access to capital when you need it most. As a sovereign enterprise of the Mandan, Hidatsa, and Arikara Nation, we offer a specialized lending experience built on speed and transparency.</p>
-
-        <h2>Funding When You Need It</h2>
-        <p>Whether it is an unexpected car repair or an emergency medical bill, our installment loans provide the cushion you need without the "single-payment" stress of a traditional payday loan. You can pay back your loan in manageable increments over time.</p>
+<div class="steps-container">
+    <div class="step-box">
+        <div class="step-circle">1</div>
+        <div class="step-label">Apply Online</div>
+    </div>
+    <div class="step-box">
+        <div class="step-circle">2</div>
+        <div class="step-label">Get Decision</div>
+    </div>
+    <div class="step-box">
+        <div class="step-circle">3</div>
+        <div class="step-label">Receive Cash</div>
     </div>
 </div>
 
-<div class="sticky-footer">
-    <a href="https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb" class="btn-large" style="font-size: 1.1rem; padding: 12px 35px; margin: 0;">APPLY FOR FUNDING</a>
+<div class="features">
+    <div class="feature-card">
+        <span class="icon">⚡</span>
+        <h3>Rapid Funding</h3>
+        <p>Funds often delivered within 24 hours of approval.</p>
+    </div>
+    <div class="feature-card">
+        <span class="icon">🛡️</span>
+        <h3>Safe & Secure</h3>
+        <p>Your data is protected by 256-bit SSL encryption.</p>
+    </div>
+    <div class="feature-card">
+        <span class="icon">🦅</span>
+        <h3>Sovereign Trust</h3>
+        <p>Lending provided by an entity of the MHA Nation.</p>
+    </div>
+</div>
+
+<div class="cta-section">
+    <p><strong>Check your eligibility in under 60 seconds.</strong></p>
+    <a href="https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb" class="apply-button">GET STARTED</a>
+</div>
+
+<div class="seo-content">
+    <h2>Why Choose MaxLend?</h2>
+    <p>When you need immediate capital for emergency repairs or medical expenses, the traditional banking process can be too slow and restrictive. MaxLend offers a flexible alternative through installment loans that allow you to pay back your balance over time, rather than all at once like a standard payday loan.</p>
+    
+    <h2>No Credit Impact</h2>
+    <p>We believe your future is more important than your credit history. MaxLend uses alternative data points to verify your application, meaning your FICO® score is not used to determine your initial eligibility. This makes us a primary choice for borrowers looking to rebuild or maintain their credit standing while accessing the funds they need.</p>
+</div>
+
+<div class="sticky-action">
+    <a href="https://www.linkconnector.com/ta.php?lc=007949096598005765&atid=MaxlendWeb" class="apply-button" style="padding: 12px 40px; font-size: 1.1rem; box-shadow: 0 4px 0 #900;">START APPLICATION</a>
 </div>
 
 <footer>
-    <div class="legal-footer">
-        <p><strong>Notice:</strong> MaxLend is an entity of the Mandan, Hidatsa, and Arikara Nation, a federally recognized sovereign American Indian Tribe. All loans are subject to Tribal Law.</p>
-        <p>145 Tribal Business Council Rd, Mandaree, ND 58757 | 1-877-936-4336</p>
-        <p>This is an expensive form of borrowing. Loans are intended for short-term financial needs and should not be used as a long-term solution.</p>
-        <p style="margin-top:20px;">&copy; 2026 MaxLend Approval Fast. All Rights Reserved.</p>
-    </div>
+    <p>Official MaxLend Affiliate Portal | 1-877-936-4336</p>
+    <p>MaxLend is a sovereign enterprise of the Mandan, Hidatsa, and Arikara Nation. Tribal law applies.</p>
+    <p>This is an expensive form of borrowing. Please use responsibly.</p>
+    <p>&copy; 2026 MaxLend Approval Fast.</p>
 </footer>
 
 </body>
