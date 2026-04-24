@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home page -->
   <url>
-    <loc>https://brightlane.github.io/maxlen-approval-fast/index.html</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://brightlane.github.io/maxlend/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Main blog / money page -->
   <url>
-    <loc>https://brightlane.github.io/maxlen-approval-fast/instant-funding.html</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <loc>https://brightlane.github.io/maxlend/blog1.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Optional pages (add/remove if you have them) -->
   <url>
-    <loc>https://brightlane.github.io/maxlen-approval-fast/emergency-loans.html</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <loc>https://brightlane.github.io/maxlend/bad-credit-loans.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-  </urlset>
+
+  <url>
+    <loc>https://brightlane.github.io/maxlend/emergency-loans.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://brightlane.github.io/maxlend/social.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
